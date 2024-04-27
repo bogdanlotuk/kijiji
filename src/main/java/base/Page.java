@@ -16,7 +16,6 @@ import java.util.List;
 import static com.codeborne.selenide.Selenide.*;
 import static base.Constants.*;
 
-
 public class Page {
     public static String locationName;
     public static String carMinPrice;
@@ -190,7 +189,6 @@ public class Page {
                 carDate = "Empty";
                 carMileage = "Empty";
                 carUrl = "Empty";
-
             }
 
             if(buttonNextPage.exists()){

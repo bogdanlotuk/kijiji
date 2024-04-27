@@ -25,7 +25,7 @@ public class KijijiCars extends BaseTest {
         Page.carMinPrice = "10000";
         Page.carMaxPrice = "15000";
         Page.carMinYear = "2012";
-        Page.carMaxMileage = "200000";
+        Page.carMaxMileage = "180000";
         page.homePage();
         page.setGlobalFilter();
         page.setCarType();
