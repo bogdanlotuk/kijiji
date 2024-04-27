@@ -30,6 +30,9 @@ public class Page {
     public SelenideElement buttonSearch = $x(BUTTON_SEARCH);
     public SelenideElement priceMin = $x(PRICE_MIN_ELEMENT);
     public SelenideElement priceMax = $x(PRICE_MAX_ELEMENT);
+    public SelenideElement mileageFilter = $x(CAR_MILEAGE_FILTER);
+    public SelenideElement mileageFilterValueMax = $x(CAR_MILEAGE_FILTER_VALUE_MAX);
+    public SelenideElement mileageFilterButton = $x(CAR_MILEAGE_FILTER_BUTTON);
     public SelenideElement buttonNextPage = $x(NEXT_PAGE_ELEMENT);
     public static String carName;
     public static String carBrand;
@@ -69,14 +72,11 @@ public class Page {
     }
 
     public void setMaxMileage(){
-        waitForElement($x("//*[@id='accordion__heading-carmileageinkms']"));
-//        sleep(5000);
-        $x("//*[@id='accordion__heading-carmileageinkms']").click();
-//        sleep(2000);
-        waitForElement($x("//*[@id='carmileageinkms_max']"));
-        $x("//*[@id='carmileageinkms_max']").sendKeys(carMaxMileage);
-//        sleep(2000);
-        $x("//button[@aria-label='Apply Kilometers']").scrollIntoView(true).hover().click();
+        waitForElement(mileageFilter);
+        mileageFilter.click();
+        waitForElement(mileageFilterValueMax);
+        mileageFilterValueMax.sendKeys(carMaxMileage);
+        mileageFilterButton.scrollIntoView(true).hover().click();
         sleep(5000);
     }
 
