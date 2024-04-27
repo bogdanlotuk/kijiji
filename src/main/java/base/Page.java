@@ -16,9 +16,12 @@ import java.util.List;
 import static com.codeborne.selenide.Selenide.*;
 import static base.Constants.*;
 
-
 public class Page {
     public static String locationName;
+    public static String carMinPrice;
+    public static String carMaxPrice;
+    public static String carMinYear;
+    public static String carMaxMileage;
     public static ArrayList<String> linksFromList = new ArrayList<>();
     public static ArrayList<Car> CarsWithUrl = new ArrayList<>();
     public SelenideElement globalFilter = $x(GLOBAL_FILTER);
@@ -27,7 +30,6 @@ public class Page {
     public SelenideElement buttonSearch = $x(BUTTON_SEARCH);
     public SelenideElement priceMin = $x(PRICE_MIN_ELEMENT);
     public SelenideElement priceMax = $x(PRICE_MAX_ELEMENT);
-
     public SelenideElement buttonNextPage = $x(NEXT_PAGE_ELEMENT);
     public static String carName;
     public static String carBrand;
@@ -39,7 +41,7 @@ public class Page {
 
     public void homePage(){
         open(BASE_URL);
-        sleep(20000);
+        sleep(10000);
 
         if($x("//div[@class='location-wrapper']//a[text()='Alberta']").exists()){
             $x("//div[@class='location-wrapper']//a[text()='Alberta']").click();
@@ -50,7 +52,7 @@ public class Page {
     }
 
     public void setGlobalFilter(){
-        sleep(20000);
+        sleep(10000);
         waitForElement(globalFilter);
         globalFilter.hover().click();
         sleep(5000);
@@ -67,21 +69,25 @@ public class Page {
     }
 
     public void setMaxMileage(){
-        sleep(5000);
+        waitForElement($x("//*[@id='accordion__heading-carmileageinkms']"));
+//        sleep(5000);
         $x("//*[@id='accordion__heading-carmileageinkms']").click();
-        sleep(2000);
-        $x("//*[@id='carmileageinkms_max']").sendKeys("200000");
-        sleep(2000);
+//        sleep(2000);
+        waitForElement($x("//*[@id='carmileageinkms_max']"));
+        $x("//*[@id='carmileageinkms_max']").sendKeys(carMaxMileage);
+//        sleep(2000);
         $x("//button[@aria-label='Apply Kilometers']").scrollIntoView(true).hover().click();
         sleep(5000);
     }
 
     public void setPrice() {
-        sleep(5000);
-        priceMin.sendKeys("8000");
-        sleep(5000);
-        priceMax.sendKeys("15000");
-        sleep(5000);
+//        sleep(5000);
+        waitForElement(priceMin);
+        priceMin.sendKeys(carMinPrice);
+        waitForElement(priceMax);
+//        sleep(5000);
+        priceMax.sendKeys(carMaxPrice);
+//        sleep(5000);
         $x(BUTTON_PRICE_ELEMENT).click();
         sleep(5000);
     }
@@ -99,7 +105,7 @@ public class Page {
 
     public void setCarYear() {
         waitForElement($x("//input[@id='caryear_min']"));
-        $x("//input[@id='caryear_min']").sendKeys("2012");
+        $x("//input[@id='caryear_min']").sendKeys(carMinYear);
         sleep(2000);
         $x("//button[@aria-label='Apply Year']").scrollIntoView(true).hover().click();
         sleep(5000);
@@ -130,7 +136,7 @@ public class Page {
         waitForElement($x(LIST_CAR_ITEM));
 
         if((!$$x(LIST_CAR_ITEM).isEmpty())) {
-            sleep(10000);
+            sleep(1000);
 
             List<SelenideElement> itemsFromList = $$x(LIST_CAR_ITEM);
             for (SelenideElement item : itemsFromList) {
@@ -183,7 +189,6 @@ public class Page {
                 carDate = "Empty";
                 carMileage = "Empty";
                 carUrl = "Empty";
-
             }
 
             if(buttonNextPage.exists()){
