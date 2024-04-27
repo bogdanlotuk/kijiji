@@ -39,7 +39,7 @@ public class Page {
 
     public void homePage(){
         open(BASE_URL);
-//        sleep(20000);
+        sleep(20000);
 
         if($x("//div[@class='location-wrapper']//a[text()='Alberta']").exists()){
             $x("//div[@class='location-wrapper']//a[text()='Alberta']").click();
@@ -72,7 +72,8 @@ public class Page {
         sleep(2000);
         $x("//*[@id='carmileageinkms_max']").sendKeys("200000");
         sleep(2000);
-        $x("//button[@aria-label='Apply Kilometers']").scrollIntoView(true).click();
+        $x("//button[@aria-label='Apply Kilometers']").scrollIntoView(true).hover().click();
+        sleep(5000);
     }
 
     public void setPrice() {
@@ -91,6 +92,7 @@ public class Page {
     }
 
     public void setCarType() {
+        waitForElement($x("//label[text()='SUV, Crossover']"));
         $x("//label[text()='SUV, Crossover']").scrollIntoView(true).click();
         sleep(5000);
     }

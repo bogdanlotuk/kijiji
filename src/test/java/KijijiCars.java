@@ -28,12 +28,11 @@ public class KijijiCars extends BaseTest {
         page.homePage();
         page.setGlobalFilter();
         page.setCarType();
-        page.setPrice();
         page.setMaxMileage();
+        page.setPrice();
         for(String query : queryList) {
             Page.carBrand = query;
             page.setCarBrand();
-//            page.setValues();
             page.getLinksFromLists();
             page.setCarBrand();
         }

@@ -56,6 +56,5 @@ public class Constants {
         MODAL_CLOSE_BUTTON = "//div[@aria-modal='true']//button[@aria-label='close']";
     }
 
-
     public static Car FIRST_LINE = new Car("CAR_NAME", "BRAND", "PRICE", "LOCATION", "DATE", "MILEAGE", "URL");
 }
