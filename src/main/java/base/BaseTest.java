@@ -16,10 +16,10 @@ public class BaseTest {
         System.out.println("BeforeClass started");
     }
 
-//    @AfterClass
-//    public void AfterClass(){
-//        Selenide.closeWindow();
-//        WebDriverManager.chromedriver().quit();
-//        System.out.println("AfterClass started");
-//    }
+    @AfterClass
+    public void AfterClass(){
+        Selenide.closeWindow();
+        WebDriverManager.chromedriver().quit();
+        System.out.println("AfterClass started");
+    }
 }
