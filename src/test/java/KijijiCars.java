@@ -19,7 +19,6 @@ public class KijijiCars extends BaseTest {
                 "Chevrolet", "Ford", "GMC", "Honda", "Hyundai", "Kia",
                 "Mazda", "Mitsubishi", "Nissan", "Toyota"
         ));
-//        constants = new Constants();
         NAME_WEBSITE = "kijijiCars";
         constants.setConstants(NAME_WEBSITE);
         System.out.println("--> Starting KijijiCars <--");
@@ -29,6 +28,7 @@ public class KijijiCars extends BaseTest {
         page.setGlobalFilter();
         page.setCarType();
         page.setMaxMileage();
+        page.setCarYear();
         page.setPrice();
         for(String query : queryList) {
             Page.carBrand = query;

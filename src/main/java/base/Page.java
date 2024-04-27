@@ -97,6 +97,14 @@ public class Page {
         sleep(5000);
     }
 
+    public void setCarYear() {
+        waitForElement($x("//input[@id='caryear_min']"));
+        $x("//input[@id='caryear_min']").sendKeys("2012");
+        sleep(2000);
+        $x("//button[@aria-label='Apply Year']").scrollIntoView(true).hover().click();
+        sleep(5000);
+    }
+
     public void waitForElement(SelenideElement element){
         if (element.exists()) {
             element.shouldBe(Condition.visible, Duration.ofSeconds(10));
