@@ -32,6 +32,8 @@ public class Page {
     public SelenideElement priceMax = $x(PRICE_MAX_ELEMENT);
     public SelenideElement mileageFilter = $x(CAR_MILEAGE_FILTER);
     public SelenideElement mileageFilterValueMax = $x(CAR_MILEAGE_FILTER_VALUE_MAX);
+    public SelenideElement yearMin = $x(CAR_YEAR_MIN_ELEMENT);
+    public SelenideElement yearButton = $x(CAR_YEAR_MIN_ELEMENT);
     public SelenideElement mileageFilterButton = $x(CAR_MILEAGE_FILTER_BUTTON);
     public SelenideElement buttonNextPage = $x(NEXT_PAGE_ELEMENT);
     public static String carName;
@@ -103,10 +105,10 @@ public class Page {
     }
 
     public void setCarYear() {
-        waitForElement($x("//input[@id='caryear_min']"));
-        $x("//input[@id='caryear_min']").sendKeys(carMinYear);
+        waitForElement(yearMin);
+        yearMin.sendKeys(carMinYear);
         sleep(2000);
-        $x("//button[@aria-label='Apply Year']").scrollIntoView(true).hover().click();
+        yearButton.scrollIntoView(true).hover().click();
         sleep(5000);
     }
 
