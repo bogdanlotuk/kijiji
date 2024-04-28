@@ -23,6 +23,8 @@ public class Constants {
     public static String CAR_MILEAGE_FILTER_VALUE_MAX = "";
     public static String CAR_MILEAGE_FILTER_BUTTON = "";
     public static String CAR_MILEAGE_ELEMENT = "";
+    public static String CAR_YEAR_MIN_ELEMENT = "";
+    public static String CAR_YEAR_BUTTON = "";
     public static String CAR_URL_ELEMENT = "";
     public static String MODAL_CLOSE_BUTTON = "";
     public static String NAME_WEBSITE = "";
@@ -57,6 +59,8 @@ public class Constants {
         CAR_MILEAGE_FILTER_VALUE_MAX = "//*[@id='accordion__heading-carmileageinkms']";
         CAR_MILEAGE_FILTER_BUTTON = "//button[@aria-label='Apply Kilometers']";
         CAR_MILEAGE_ELEMENT = "svg[viewBox='0 0 24 24']+p";
+        CAR_YEAR_MIN_ELEMENT = "//input[@id='caryear_min']";
+        CAR_YEAR_BUTTON = "//input[@id='caryear_min']";
         CAR_URL_ELEMENT = "a[data-testid='listing-link']";
         NEXT_PAGE_ELEMENT = "//li[@data-testid='pagination-next-link']/a[contains(text(), 'Next')]";
         MODAL_CLOSE_BUTTON = "//div[@aria-modal='true']//button[@aria-label='close']";
