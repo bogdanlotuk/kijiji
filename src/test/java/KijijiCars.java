@@ -19,6 +19,7 @@ public class KijijiCars extends BaseTest {
         ));
         NAME_WEBSITE = "kijijiCars";
         constants.setConstants(NAME_WEBSITE);
+        constants.setConstants(NAME_WEBSITE);
         System.out.println("--> Starting KijijiCars <--");
         Page page = new Page();
         Page.locationName = "Calgary";

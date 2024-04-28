@@ -22,7 +22,6 @@ public class Page {
     public static String carMaxPrice;
     public static String carMinYear;
     public static String carMaxMileage;
-    public static String carType;
     public static ArrayList<String> linksFromList = new ArrayList<>();
     public static ArrayList<Car> CarsWithUrl = new ArrayList<>();
     public SelenideElement globalFilter = $x(GLOBAL_FILTER);
@@ -34,10 +33,10 @@ public class Page {
     public SelenideElement mileageFilter = $x(CAR_MILEAGE_FILTER);
     public SelenideElement mileageFilterValueMax = $x(CAR_MILEAGE_FILTER_VALUE_MAX);
     public SelenideElement mileageFilterButton = $x(CAR_MILEAGE_FILTER_BUTTON);
-    public SelenideElement carTypeValue = $x("//label[text()='"+carType+"']");
     public SelenideElement buttonNextPage = $x(NEXT_PAGE_ELEMENT);
     public static String carName;
     public static String carBrand;
+    public static String carType;
     public static String carPrice;
     public static String carLocation;
     public static String carDate;
@@ -83,25 +82,23 @@ public class Page {
     }
 
     public void setPrice() {
-//        sleep(5000);
         waitForElement(priceMin);
         priceMin.sendKeys(carMinPrice);
         waitForElement(priceMax);
-//        sleep(5000);
         priceMax.sendKeys(carMaxPrice);
-//        sleep(5000);
         $x(BUTTON_PRICE_ELEMENT).click();
         sleep(5000);
     }
 
     public void setCarBrand() {
+        waitForElement($x("//label[text()='" + carBrand + "']"));
         $x("//label[text()='" + carBrand + "']").scrollIntoView(true).click();
         sleep(10000);
     }
 
     public void setCarType() {
-        waitForElement(carTypeValue);
-        carTypeValue.scrollIntoView(true).click();
+        waitForElement($x("//label[text()='" + carType + "']"));
+        $x("//label[text()='" + carType + "']").scrollIntoView(true).click();
         sleep(5000);
     }
 
