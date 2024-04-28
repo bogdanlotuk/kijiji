@@ -36,6 +36,7 @@ public class Page {
     public SelenideElement buttonNextPage = $x(NEXT_PAGE_ELEMENT);
     public static String carName;
     public static String carBrand;
+    public static String carType;
     public static String carPrice;
     public static String carLocation;
     public static String carDate;
@@ -81,25 +82,23 @@ public class Page {
     }
 
     public void setPrice() {
-//        sleep(5000);
         waitForElement(priceMin);
         priceMin.sendKeys(carMinPrice);
         waitForElement(priceMax);
-//        sleep(5000);
         priceMax.sendKeys(carMaxPrice);
-//        sleep(5000);
         $x(BUTTON_PRICE_ELEMENT).click();
         sleep(5000);
     }
 
     public void setCarBrand() {
+        waitForElement($x("//label[text()='" + carBrand + "']"));
         $x("//label[text()='" + carBrand + "']").scrollIntoView(true).click();
         sleep(10000);
     }
 
     public void setCarType() {
-        waitForElement($x("//label[text()='SUV, Crossover']"));
-        $x("//label[text()='SUV, Crossover']").scrollIntoView(true).click();
+        waitForElement($x("//label[text()='" + carType + "']"));
+        $x("//label[text()='" + carType + "']").scrollIntoView(true).click();
         sleep(5000);
     }
 

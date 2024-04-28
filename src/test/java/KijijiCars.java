@@ -19,6 +19,7 @@ public class KijijiCars extends BaseTest {
         ));
         NAME_WEBSITE = "kijijiCars";
         constants.setConstants(NAME_WEBSITE);
+        constants.setConstants(NAME_WEBSITE);
         System.out.println("--> Starting KijijiCars <--");
         Page page = new Page();
         Page.locationName = "Calgary";
@@ -26,6 +27,7 @@ public class KijijiCars extends BaseTest {
         Page.carMaxPrice = "15000";
         Page.carMinYear = "2012";
         Page.carMaxMileage = "180000";
+        Page.carType = "SUV, Crossover";
         page.homePage();
         page.setGlobalFilter();
         page.setCarType();
