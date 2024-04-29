@@ -33,7 +33,7 @@ public class Page {
     public SelenideElement mileageFilter = $x(CAR_MILEAGE_FILTER);
     public SelenideElement mileageFilterValueMax = $x(CAR_MILEAGE_FILTER_VALUE_MAX);
     public SelenideElement yearMin = $x(CAR_YEAR_MIN_ELEMENT);
-    public SelenideElement yearButton = $x(CAR_YEAR_MIN_ELEMENT);
+    public SelenideElement yearButton = $x(CAR_YEAR_BUTTON);
     public SelenideElement mileageFilterButton = $x(CAR_MILEAGE_FILTER_BUTTON);
     public SelenideElement buttonNextPage = $x(NEXT_PAGE_ELEMENT);
     public static String carName;
