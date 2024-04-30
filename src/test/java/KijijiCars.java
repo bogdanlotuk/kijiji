@@ -14,7 +14,7 @@ public class KijijiCars extends BaseTest {
     @Test(retryAnalyzer = RetryTest.class)
     public void KijijiCars() throws FileNotFoundException {
         ArrayList<String> queryList = new ArrayList<>(Arrays.asList(
-                "Chevrolet", "Ford", "GMC", "Honda", "Hyundai", "Jeep",
+                "Chevrolet", "Ford", "Honda", "Hyundai",
                 "Kia", "Mazda", "Mitsubishi", "Nissan", "Toyota"
         ));
         NAME_WEBSITE = "kijijiCars";
