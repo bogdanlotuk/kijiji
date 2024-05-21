@@ -14,7 +14,7 @@ public class KijijiCars extends BaseTest {
     @Test(retryAnalyzer = RetryTest.class)
     public void KijijiCars() throws FileNotFoundException {
         ArrayList<String> queryList = new ArrayList<>(Arrays.asList(
-                "Chevrolet", "Ford", "Honda", "Hyundai",
+                "Chevrolet", "Ford", "Jeep", "Honda", "Hyundai",
                 "Kia", "Mazda", "Mitsubishi", "Nissan", "Toyota"
         ));
         NAME_WEBSITE = "kijijiCars";
@@ -24,9 +24,9 @@ public class KijijiCars extends BaseTest {
         Page page = new Page();
         Page.locationName = "Calgary";
         Page.carMinPrice = "10000";
-        Page.carMaxPrice = "15000";
+        Page.carMaxPrice = "18000";
         Page.carMinYear = "2012";
-        Page.carMaxMileage = "180000";
+        Page.carMaxMileage = "200000";
         Page.carType = "SUV, Crossover";
         page.homePage();
         page.setGlobalFilter();
