@@ -17,6 +17,7 @@ public class BaseTest {
 //        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 //        Configuration.browserSize = "1366x768";
 //        System.out.println("BeforeClass started");
+
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         WebDriverRunner.setWebDriver(driver);
