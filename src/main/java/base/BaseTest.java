@@ -11,7 +11,7 @@ public class BaseTest {
     @BeforeClass
     public void BeforeClass(){
         WebDriverManager.chromedriver().setup();
-//        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         Configuration.browserSize = "1366x768";
 //        System.out.println("BeforeClass started");
     }
