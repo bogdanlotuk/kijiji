@@ -11,7 +11,7 @@ import static base.Constants.NAME_WEBSITE;
 
 public class KijijiCars extends BaseTest {
 
-    @Test(retryAnalyzer = RetryTest.class)
+    @Test()
     public void KijijiCars() throws FileNotFoundException {
         ArrayList<String> queryList = new ArrayList<>(Arrays.asList(
                 "Honda", "Mitsubishi"
